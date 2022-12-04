@@ -1,0 +1,160 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 14px;
+  font-family: "Red Hat Text", sans-serif;
+}
+@media (max-width: 800px) {
+  html {
+    font-size: 12px;
+  }
+}
+@media (max-width: 550px) {
+  html {
+    font-size: 10px;
+  }
+}
+@media (max-width: 370px) {
+  html {
+    font-size: 8px;
+  }
+}
+
+body {
+  min-height: 100vh;
+  background-image: url("../images/bg-stars.svg");
+  background-color: #201926;
+}
+
+main {
+  height: 77vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 15rem;
+}
+
+.container {
+  width: 750px;
+  text-align: center;
+  margin-top: 8rem;
+}
+@media (max-width: 800px) {
+  .container {
+    width: 500px;
+  }
+}
+@media (max-width: 550px) {
+  .container {
+    width: 400px;
+  }
+}
+@media (max-width: 450px) {
+  .container {
+    width: 350px;
+  }
+}
+@media (max-width: 370px) {
+  .container {
+    width: 250px;
+  }
+}
+.container .header {
+  color: white;
+  letter-spacing: 0.5rem;
+  margin-bottom: 7rem;
+}
+.container .timer {
+  display: flex;
+  justify-content: space-between;
+}
+.container .timer .time-board {
+  width: 150px;
+  border-radius: 5px;
+  font-size: 6rem;
+  color: hsl(345deg, 95%, 68%);
+  background-color: hsl(236deg, 21%, 26%);
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+@media (max-width: 800px) {
+  .container .timer .time-board {
+    width: 100px;
+    font-size: 4.5rem;
+  }
+}
+@media (max-width: 550px) {
+  .container .timer .time-board {
+    width: 80px;
+  }
+}
+@media (max-width: 450px) {
+  .container .timer .time-board {
+    width: 70px;
+    font-size: 3.5rem;
+  }
+}
+@media (max-width: 370px) {
+  .container .timer .time-board {
+    width: 50px;
+    font-size: 3rem;
+  }
+}
+.container .timer p {
+  color: hsl(237deg, 18%, 59%);
+  letter-spacing: 0.5rem;
+}
+@media (max-width: 450px) {
+  .container .timer p {
+    font-size: 0.5rem;
+    letter-spacing: 0.5rem;
+  }
+}
+
+footer {
+  background-image: url("../images/pattern-hills.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 23vh;
+  display: grid;
+  place-items: center;
+}
+footer .socials {
+  width: 130px;
+  display: flex;
+  justify-content: space-between;
+  padding-top: 2.5rem;
+}
+footer .socials svg {
+  cursor: pointer;
+  fill: #8385a9;
+  transition: 0.3s;
+}
+footer .socials svg:hover {
+  fill: hsl(345deg, 95%, 68%);
+}
+
+.flip {
+  animation: flip-horizontal-bottom 0.8s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+  backface-visibility: hidden;
+}
+
+@keyframes flip-horizontal-bottom {
+  0% {
+    transform: rotateX(0);
+  }
+  100% {
+    transform: rotateX(-360deg);
+  }
+}
+
+/*# sourceMappingURL=style.css.map */
