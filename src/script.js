@@ -18,7 +18,7 @@ const inMilliseconds = (quantity = 99, measure = "days") => {
 };
 
 // Current date + custom time
-const countDownDate = new Date().getTime() + inMilliseconds(10, "seconds");
+const countDownDate = new Date().getTime() + inMilliseconds(14, "days");
 
 // Update the count down every 1 second
 const x = setInterval(function () {
