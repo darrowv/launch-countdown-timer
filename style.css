@@ -31,7 +31,7 @@ html {
 
 body {
   min-height: 100vh;
-  background-image: url("../images/bg-stars.svg");
+  background-image: url("./images/bg-stars.svg");
   background-color: #201926;
 }
 
@@ -121,7 +121,7 @@ main {
 }
 
 footer {
-  background-image: url("../images/pattern-hills.svg");
+  background-image: url("./images/pattern-hills.svg");
   background-size: cover;
   background-repeat: no-repeat;
   height: 23vh;
