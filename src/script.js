@@ -2,7 +2,6 @@ const daysNode = document.getElementById("days");
 const hoursNode = document.getElementById("hours");
 const minutesNode = document.getElementById("minutes");
 const secondsNode = document.getElementById("seconds");
-const timerNode = document.getElementById("timer");
 
 // turning time into milliseconds
 const inMilliseconds = (quantity = 99, measure = "days") => {
