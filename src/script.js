@@ -34,7 +34,7 @@ const x = setInterval(function () {
     (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
   );
   const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-  const seconds = Math.floor((distance % (1000 * 60)) / 1000) + 1;
+  const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
   // Display the result in the page
   if (days.toString() !== daysNode.textContent) {
@@ -54,6 +54,7 @@ const x = setInterval(function () {
     daysNode.textContent++;
     hoursNode.textContent++;
     minutesNode.textContent++;
+    secondsNode.textContent++;
   }
 }, 1000);
 
