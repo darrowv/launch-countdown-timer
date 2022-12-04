@@ -4,6 +4,7 @@ $dark-desaturated-blue: hsl(236, 21%, 26%);
 $very-dark-blue: hsl(235, 16%, 14%);
 $blackish-blue: hsl(234, 17%, 12%);
 $violet: #201926;
+$brown: rgb(85, 40, 40);
 
 *,
 *::before,
@@ -145,18 +146,27 @@ footer {
   }
 }
 
-.flip {
-	animation: flip-horizontal-bottom 0.8s cubic-bezier(0.455, 0.030, 0.515, 0.955);
+.pulse {
+  animation: pulse 0.6s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+}
+
+@keyframes pulse {
+	0% {
+    transform: scale(.85);
+		opacity: 0.6;
+		text-shadow: 0 0 4px $brown;
+	}
+  50% {
+    transform: scale(1);
+		text-shadow: 0 0 7px $brown;
+  }
+	100% {
+    transform: scale(1);
+		opacity: 1;
+		text-shadow: 0 0 10px $brown;
+	}
+}
+
+#timer {
   
-  backface-visibility: hidden;
 }
-
- @keyframes flip-horizontal-bottom {
-  0% {
-    transform: rotateX(0);
-  }
-  100% {
-    transform: rotateX(-360deg);
-  }
-}
-

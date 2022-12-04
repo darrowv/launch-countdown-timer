@@ -1,3 +1,9 @@
+const daysNode = document.getElementById("days");
+const hoursNode = document.getElementById("hours");
+const minutesNode = document.getElementById("minutes");
+const secondsNode = document.getElementById("seconds");
+const timerNode = document.getElementById("timer");
+
 // turning time into milliseconds
 const inMilliseconds = (quantity = 99, measure = "days") => {
   switch (measure) {
@@ -13,7 +19,7 @@ const inMilliseconds = (quantity = 99, measure = "days") => {
 };
 
 // Current date + custom time
-const countDownDate = new Date().getTime() + inMilliseconds(14, "days");
+const countDownDate = new Date().getTime() + inMilliseconds(10, "seconds");
 
 // Update the count down every 1 second
 const x = setInterval(function () {
@@ -29,35 +35,70 @@ const x = setInterval(function () {
     (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
   );
   const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-  const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+  const seconds = Math.floor((distance % (1000 * 60)) / 1000) + 1;
 
   // Display the result in the page
-  document.getElementById("days").textContent = days;
-  document.getElementById("hours").textContent = hours;
-  document.getElementById("minutes").textContent = minutes;
-  document.getElementById("seconds").textContent = seconds;
+  if (days.toString() !== daysNode.textContent) {
+    daysNode.textContent = days;
+  }
+  if (hours.toString() !== hoursNode.textContent) {
+    hoursNode.textContent = hours;
+  }
+  if (minutes.toString() !== minutesNode.textContent) {
+    minutesNode.textContent = minutes;
+  }
+  secondsNode.textContent = seconds;
 
   // If the count down is finished, do this
   if (distance < 0) {
     clearInterval(x);
-
-    // document.getElementById("demo").innerHTML = "EXPIRED";
+    daysNode.textContent++;
+    hoursNode.textContent++;
+    minutesNode.textContent++;
   }
 }, 1000);
 
-const element = document.getElementById("seconds");
-
 // create an observer instance
-const observer = new MutationObserver((mutations) => {
+const daysObserver = new MutationObserver((mutations) => {
   mutations.forEach((mutation) => {
-    element.classList.remove("flip");
-    void element.offsetWidth;
-    element.classList.add("flip");
+    daysNode.classList.remove("pulse");
+    void daysNode.offsetWidth;
+    daysNode.classList.add("pulse");
   });
 });
 
 // pass in the target node, as well as the observer options
-observer.observe(document.getElementById("seconds"), { childList: true });
+daysObserver.observe(daysNode, { childList: true });
 
 // later, you can stop observing
 // observer.disconnect();
+
+const hoursObserver = new MutationObserver((mutations) => {
+  mutations.forEach((mutation) => {
+    hoursNode.classList.remove("pulse");
+    void hoursNode.offsetWidth;
+    hoursNode.classList.add("pulse");
+  });
+});
+
+hoursObserver.observe(hoursNode, { childList: true });
+
+const minutesObserver = new MutationObserver((mutations) => {
+  mutations.forEach((mutation) => {
+    minutesNode.classList.remove("pulse");
+    void minutesNode.offsetWidth;
+    minutesNode.classList.add("pulse");
+  });
+});
+
+minutesObserver.observe(minutesNode, { childList: true });
+
+const secondsObserver = new MutationObserver((mutations) => {
+  mutations.forEach((mutation) => {
+    secondsNode.classList.remove("pulse");
+    void secondsNode.offsetWidth;
+    secondsNode.classList.add("pulse");
+  });
+});
+
+secondsObserver.observe(secondsNode, { childList: true });

@@ -1,4 +1,4 @@
-# Frontend Mentor - Launch countdown timer solution
+# Launch countdown timer solution
 
 This is a solution to the [Launch countdown timer challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/launch-countdown-timer-N0XkGfyz-).
 
@@ -22,7 +22,7 @@ Users should be able to:
 
 - See hover states for all interactive elements on the page
 - See a live countdown timer that ticks down every second (start the count at 14 days)
-- **Bonus**: When a number changes, make the card flip from the middle
+- **Bonus**: When on changing number
 
 ### Screenshot
 
@@ -37,6 +37,7 @@ Users should be able to:
 ### Built with
 
 - JavaScript
+- Sass/scss
 - Semantic HTML5 markup
 - CSS custom properties
 - Flexbox
@@ -47,12 +48,12 @@ Users should be able to:
 
 ### What I learned
 
-- ***
+- Learned how to set up countdown timer in js using Date object etc.
 
 ### Useful resources
 
 - [w3schools: how to create countdown timer](https://www.w3schools.com/howto/howto_js_countdown.asp)
-- [********\*\*\*\*********](*********************************************)
+- [Mutation observer usage](https://developer.mozilla.org/en-US/docs/Web/API/MutationObserver/observe)
 
 ## Author
 
